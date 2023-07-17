@@ -1,0 +1,177 @@
+<style>
+    .maincontainer {
+        height: 99.9vh;
+        width: 206vh;
+        background: url('/images/backimg5.png');
+        background-size: cover;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .box {
+        width: 50vw;
+        height: auto;
+        background: #46b5b564;
+        border-radius: 20px;
+        padding: 20px;
+        justify-content: right;
+        margin-left: 50px;
+        /* background: transparent; */
+
+    }
+
+    .headingdiv {
+        padding: 10px;
+        display: flex;
+        border-radius: 10px;
+        align-items: center;
+        justify-content: space-between;
+        width: 45vw;
+
+    }
+
+    .centerstyle {
+        display: flex;
+        justify-content: center;
+    }
+</style>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="/javascripts/project.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+        crossorigin="anonymous"></script>
+
+
+</head>
+<div class="maincontainer">
+    <div class="box">
+        <div class="headingdiv">
+            <div>
+                <img src="/images/burger.png" width="50" height="50" />
+                <span
+                    style="padding-left: 10px; letter-spacing: 1; font-family: Poppins; font-size: 20px; font-weight: bold;">
+                    Indian Foods
+                </span>
+            </div>
+            <div>
+                <a href="/foods/display_all_foods" style="text-decoration: none;">
+                    <img src="/images/addicon.png" width="60" height="80" />
+                </a>
+            </div>
+        </div>
+
+        <form action="/foods/submit_food_details" method="post" class="row g-3" enctype="multipart/form-data">
+            <div class="col-md-12">
+                <label for="type" class="form-label"><b>Food Type:</b></label>
+                <select id="type" name="type" class="form-select" aria-label="Default select example">
+                    <option selected>-Select Food-</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="fooditem" class="form-label"><b>Food Item:</b></label>
+                <select id="fooditem" name="fooditem" class="form-select" aria-label="Default select example">
+                    <option selected>-Select FoodType-</option>
+                </select>
+            </div>
+
+            <div class="col-md-6">
+                <label for="qty" class="form-label"><b>Quantity:</b></label>
+                <input type="text" name="qty" class="form-control" id="qty">
+            </div>
+
+            <div class="col-md-6">
+                <label for="price" class="form-label"><b>Price:</b></label>
+                <input type="text" name="price" class="form-control" id="price">
+            </div>
+            <div class="col-md-6">
+                <label for="offer" class="form-label"><b>Offer Price:</b></label>
+                <input type="text" name="offer" class="form-control" id="offer">
+            </div>
+
+            <div class="col-md-6" style="display: flex; flex-direction: column;">
+                <div><b>Status v/nv.:</b></div>
+                <div style="display: flex; flex-direction: row; justify-content: space-evenly;">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" value="Available" name="status" id="status">
+                        <label class="form-check-label" for="status">
+                            Veg
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" value="Not Available" name="status" id="status">
+                        <label class="form-check-label" for="status">
+                            Non Veg
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6" style="display: flex; flex-direction: column;">
+                <div><b>Status:</b></div>
+                <div style="display: flex; flex-direction: row; justify-content: space-evenly;">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" value="Available" name="statusv" id="statusv">
+                        <label class="form-check-label" for="statusv">
+                            Available
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" value="Not Available" name="statusv" id="statusv">
+                        <label class="form-check-label" for="statusv">
+                            Not Available
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <label for="formFile" class="form-label"><b>Picture-</b></label>
+                <input class="form-control" name="picture" type="file" id="formFile">
+            </div>
+
+            <div class="col-md-6 centerstyle">
+                <button style="width: 80%;" type="submit" class="btn btn-primary">Save</button>
+
+            </div>
+            <div class="col-md-6 centerstyle">
+                <button style="width: 80%;" type="reset" class="btn btn-primary">Reset</button>
+
+            </div>
+            <div class="col-md-12 centerstyle">
+                <% if(status==1) { %>
+                    <span style="color: darkgreen; font-size: 14px;">
+                        <%=message %>
+                    </span>
+                    <% } else if(status==0) { %>
+                        <span style="color: darkred; font-size: 14px;">
+                            <%=message %>
+                        </span>
+                        <% } %>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+</html>

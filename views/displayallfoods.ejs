@@ -1,0 +1,137 @@
+<style>
+  .maincontainer {
+       height: 100vh;
+       width: 2o6vh;
+       background: url('/images/backimg7.png') ;
+       background-size: cover;
+       display: flex;
+       justify-content:center;
+       align-items: center;
+      
+   }
+
+   .box {
+       width: 860px;
+       height: auto;
+       background: #b7c3c30a;
+       border-radius: 20px;
+       padding: 20px;
+       justify-content: right;
+       margin-left: 50px;
+       box-shadow: 0 10px 20px;
+      /* background: transparent; */     
+
+   }
+
+   .headingdiv {
+       padding: 10px;
+       display: flex;
+       border-radius: 10px;
+       align-items: center;
+       justify-content: space-between;
+       width: 55vw;
+   }
+
+   .centerstyle {
+       display: flex;
+       justify-content: center;
+   }
+</style>
+<html>
+<head>
+
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+       crossorigin="anonymous"></script>
+
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+       integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+       crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+       integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+       crossorigin="anonymous"></script>
+
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+
+</head>
+<div class="maincontainer">
+   <div class="box">
+       <div class="headingdiv">
+           <div>
+               <img src="/images/foodgif2.png" width="80" height="80"/>
+               <span
+               style="padding-left: 10px; letter-spacing: 1; font-family: Poppins; font-size: 20px; font-weight: bold;">
+               Edit Food Data
+           </span>
+       </div>
+       <div>
+           <a href="/foods/indianfoods" style="text-decoration: none;">
+               <img src="/images/addrecordicon.png" width="80" height="80" />
+           </a>
+
+       </div>
+   </div>
+
+   <table class="table table-striped">
+       <thead>
+           <tr>
+             
+               <th scope="col">Food Type</th>
+               <th scope="col">Food Item</th>
+               <th scope="col">Quantity</th>
+               <th scope="col">Price<br>Offer Price</th>
+               <th scope="col">Status V/nv<br>Status</th>
+               <th scope="col">Picture</th>
+               <th scope="col">Edit/Delet</th>
+           </tr>
+       </thead>
+       <tbody>
+           <% data.map((item)=>{ %>
+               <tr>
+                   <th scope="row">
+                       <%=item.foodname %>
+                   </th>
+                   <td>
+                    <%= item.fooditem %>
+                </td>
+                   <td>
+                       <%= item.qty %>
+                   </td>
+                   <td>
+                        <s>
+                            <%= item.price %>
+                        </s>
+                       <br>
+                       <%= item.offer %>
+                   </td>
+                   <td>
+                       
+                           <%= item.status %>
+                       
+                       <br>
+                       <%= item.statusv %>
+                   </td>
+                   
+                   <td>
+                        <a href="/foods/displaypicture?foodid=<%= item.foodid %>&foodname=<%= item.foodname %>&picture=<%= item.picture %>">
+                        <img src="/images/<%= item.picture %>"
+                           style="width: 40px; height: 40px; border-radius: 10px;" />
+                        </a>   
+                   </td>
+                   <td>
+                       <a href="/foods/displaybyid?foodid=<%= item.foodid %>"
+                           style="text-decoration: none; font-weight: 700;">
+                           Edit/Delete</a>
+                   </td>
+               </tr>
+               <% }) %>
+       </tbody>
+   </table>
+</div>
+</div>
+
+</html>

@@ -1,0 +1,14 @@
+<html>
+    <center>
+        <form action="/foods/edit_picture" method="post" enctype="multipart/form-data">
+
+            <input type="hidden" name="foodid" value="<%=data.foodid%>">
+            <h1><%=data.foodname%></h1><br>
+            <img src="/images/<%=data.picture %>" width="350"/><br>
+            <b>Upload new Picture</b><br><br>
+            <input type="file" require name="picture">
+            <input type="submit" value="upload Image">
+
+        </form>
+    </center>
+</html>

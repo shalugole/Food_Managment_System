@@ -1,0 +1,50 @@
+<style>
+    .maincontainer{
+      width: 100%;
+      height: 100vh;  
+    
+      font-family: "Poppins";
+    }
+    .navbox{
+        width: 100%;
+        height: 8vh;
+        background: #0e1822;
+       display: flex;  
+       flex-direction: row;     
+    }
+  </style>
+<html>
+  <head>  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+  </head>
+  <div class="maincontainer">
+    <div class="navbox" >
+        <div style="width:50px;  padding: 10px; align-self: center;">
+            <img src="/images/food1.png" style="width:60px; height: 60px;"/>
+          </div>
+            <div style="color:#fff; align-self:center; font-size: 16px; font-family: Poppins; font-weight: bold;letter-spacing: 1px;">
+                Tasty Food Ever...
+              </div>
+        <div style="width:900px; display: flex; justify-content: center; align-items: center;">
+           
+          <a href="/foods/indianfoods" target="mw" style="text-decoration: none; color:#fff; align-self:center; font-size: 14px; font-family: Poppins; font-weight: 600;letter-spacing: 1px; margin-right: 5%;" >ADD FOOD</a>
+          
+          <a href="/foods/display_all_foods" target="mw"
+           style="text-decoration: none; color:#fff; align-self:center; font-size: 14px; font-family: Poppins; font-weight: 600;letter-spacing: 1px; margin-right: 5%;" > FOOD LIST</a>
+          <a href="/admin/logout" target="_self" style="text-decoration: none; color:#fff; align-self:center; font-size: 14px; font-family: Poppins; font-weight: 600;letter-spacing: 1px; margin-right: 5%;" >LOGOUT</a>
+          
+        </div>
+        <div style="width:300px; color: rgb(240, 248, 255); display: flex; justify-content: center; align-items: center; align-self: center;">
+          <%=admin.adminname%>
+          <img src="/images/<%=admin.picture%>" style="border-radius: 15px; width: 50px;"/>
+        </div>
+        
+    </div>
+    <div>
+      <iframe width="100%" height="100%" name="mw" frameborder="0"></iframe>
+    </div>
+  </div>
+</html>
+
